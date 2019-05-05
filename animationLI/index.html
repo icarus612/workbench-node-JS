@@ -1,23 +1,28 @@
 <html lang="en" dir="ltr">
 	<head>
 		<meta charset="utf-8">
-		<title>Quest</title>
+		<title>Animation List Items</title>
 		<link rel="stylesheet" href="./style.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-		<link href="https://fonts.googleapis.com/css?family=Inconsolata|Indie+Flower|Open+Sans|Quicksand" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Inconsolata|Indie+Flower|Open+Sans|Quicksand" rel="stylesheet">
 	</head>
 	<body>
-	<section class="bg-finserv-decor-1 text-darkblue pt-5 pb-3"  id="dot-outer">
+	<section class="background p-5"  id="dot-outer">
 		<div class="container" id="dot-start">
             <div class="d-flex flex-column flex-sm-row flex-wrap flex-lg-nowrap justify-content-start align-items-stretch workflow large landing" >
 
                 <div class='col-2 image'>
-                    <img class="img-landing" src="{{asset 'images/landingPage/finserv/predict.svg'}}"/>
+                    <div class="throbber">
+                        <div class="throbber-inner"></div>
+                    </div>
                 </div>
                 <div class="col-10 ml-4 pt-5 text-left">
                     <h2 class="">
-                        Our AI-powered platform is unparalleled when it comes to customer analytics. Here’s what sets us apart:
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin et risus sapien. Aliquam tempus sapien non laoreet posuere.
                     </h2>
                 </div>
             </div>
@@ -26,43 +31,46 @@
             <div class="animated-dot mv-3"></div>
 
             <div class="d-flex flex-column flex-wrap flex-lg-nowrap justify-content-center align-items-end workflow landing" id="stage">
+                <div class="throbber">
+                    <div class="throbber-inner"></div>
+                </div>
 				<div class="col-7 step">
-                    {{> pulsar classNames="insurance-pulse t-1"}}
-
+          <div class="throbber">
+              <div class="throbber-inner"></div>
+          </div>
                     <div>
                         <h4 class="description">
                             Speed
                         </h4>
 
                         <p class="description">
-                            We have the fastest time to insights platform, delivering insights from customer data in real time. This saves analysts weeks and months of time to focus on mission-critical tasks.
-                        </p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin et risus sapien. Aliquam tempus sapien non laoreet posuere. Fusce dolor nulla, interdum ultricies quam vitae, sagittis interdum enim. Nulla a nunc enim. Vestibulum mollis sodales tincidunt. Nulla ullamcorper dui quis magna feugiat, vel fringilla libero tristique. Nulla aliquet aliquam nisl, et aliquam nibh lacinia quis.                        </p>
 					</div>
 				</div>
 
                 <div class="col-7 step">
-                    {{> pulsar classNames="insurance-pulse t-2"}}
-
+                  <div class="throbber">
+                      <div class="throbber-inner"></div>
+                  </div>
                     <div>
                         <h4 class="description">
                             Debth
                         </h4>
 
                         <p class="description">
-                            Our platform ingests omni-channel structured and unstructured data, meaning analysts are never limited to only seeing insights from a portion of customer data. Plus, results are shown in various visualizations on one convenient dashboard to make analyzing and reporting quick and easy.
-                        </p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin et risus sapien. Aliquam tempus sapien non laoreet posuere. Fusce dolor nulla, interdum ultricies quam vitae, sagittis interdum enim. Nulla a nunc enim. Vestibulum mollis sodales tincidunt. Nulla ullamcorper dui quis magna feugiat, vel fringilla libero tristique. Nulla aliquet aliquam nisl, et aliquam nibh lacinia quis.                        </p>
 					</div>
 				</div>
 
                 <div class="col-7 step">
-                    {{> pulsar classNames="insurance-pulse t-3"}}
-					<div>
+                  <div class="throbber">
+                      <div class="throbber-inner"></div>
+                  </div>					<div>
                         <h4 class="description">
                             Functionality
                         </h4>
                         <p class="description">
-                            We utilize unsupervised machine learning, natural language understanding, topic modeling, predictive intelligence, and more to deliver the most comprehensive datasets for our clients to analyze.
-                        </p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin et risus sapien. Aliquam tempus sapien non laoreet posuere. Fusce dolor nulla, interdum ultricies quam vitae, sagittis interdum enim. Nulla a nunc enim. Vestibulum mollis sodales tincidunt. Nulla ullamcorper dui quis magna feugiat, vel fringilla libero tristique. Nulla aliquet aliquam nisl, et aliquam nibh lacinia quis.                        </p>
 					</div>
 				</div>
 			</div>
@@ -71,9 +79,6 @@
 </section>
 
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script src="../assets/anime/lib/anime.min.js"></script>
 <script src="findMeAni.js"></script>
 
