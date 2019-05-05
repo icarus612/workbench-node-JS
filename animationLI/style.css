@@ -36,6 +36,15 @@
     box-shadow: 0 0 0 2px #02A9F7;
     background: hsla(.55, .99 , .59, .2);
 }
+.top-throbber {
+
+    top: 100%;
+    left: 68px;
+}
+.mid-throbber {
+    top: 50%;
+    left: 68px;
+}
 .step{
     border-left: 2px solid #0c1b5d;
     margin: 12px;
@@ -67,47 +76,57 @@
 .step > .image {
     display: inline-block
 }
-      .workflow > .step {
-          padding: 0.5em;
-          flex: 1 0 200px;
-          text-align: center;
-          transition: all 0.25s;
-          position: relative; }
+.workflow > .step {
+  padding: 0.5em;
+  flex: 1 0 200px;
+  text-align: center;
+  transition: all 0.25s;
+  position: relative;
+}
 .workflow > .step > div {
-    margin-bottom: 25px; }
+    margin-bottom: 25px;
+}
 .workflow > .step > .image {
-    display: inline-block; }
+    display: inline-block;
+}
 .workflow > .step > .image > img {
     width: 120px;
     height: 100px;
-    margin-bottom: 1em; }
+    margin-bottom: 1em;
+}
 .workflow > .step > .image .img-landing {
     width: 150px;
     height: auto;
-    margin-bottom: 1em; }
+    margin-bottom: 1em;
+}
 .workflow > .step > .image .title {
-    white-space: nowrap; }
+    white-space: nowrap;
+}
 .workflow > .step .index {
     border-radius: 50%;
     background-color: rgba(0, 0, 0, 0.15);
     width: 2em;
     height: 2em;
     display: inline-block;
-    line-height: 2em; }
+    line-height: 2em;
+}
 .workflow > .step .desc {
     display: inline-block;
     padding: 0 1em;
     color: #666666;
     text-align: left;
-    text-justify: auto; }
+    text-justify: auto;
+}
 .workflow > .step .detail {
-    font-size: 14px; }
+    font-size: 14px;
+}
 .workflow > .step .divider {
     width: 2px;
     height: 15px;
     position: relative;
     background: #02A9F7;
-    display: inline-block; }
+    display: inline-block;
+}
 .workflow > .step .divider:after {
     position: absolute;
     bottom: -8px;
@@ -116,4 +135,8 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #02A9F7; }
+    background: #02A9F7;
+}
+.workflow{
+    position: relative;
+}
