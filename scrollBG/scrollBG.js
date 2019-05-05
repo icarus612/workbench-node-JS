@@ -23,29 +23,29 @@ let animateBG = (el, c1, c2) => {
         })
     )
 }
-scrollBG[scrollBG.length] = animateBG(".privacy-policy-bg", "#134a89", "#1ea185")
-scrollBG[scrollBG.length] = animateBG(".privacy-policy-bg", "#1ea185", "#9bbb5c")
-scrollBG[scrollBG.length] = animateBG(".privacy-policy-bg", "#9bbb5c", "#e3f226")
-scrollBG[scrollBG.length] = animateBG(".privacy-policy-bg", "#e3f226", "#f29b26")
-scrollBG[scrollBG.length] = animateBG(".privacy-policy-bg", "#f29b26", "#bd392f")
-scrollBG[scrollBG.length] = animateBG(".privacy-policy-bg", "#bd392f", "#f15b6d")
-scrollBG[scrollBG.length] = animateBG(".privacy-policy-bg", "#f15b6d", "#9b26f2")
-scrollBG[scrollBG.length] = animateBG(".privacy-policy-bg", "#9b26f2", "#3fa3db")
-scrollBG[scrollBG.length] = animateBG(".privacy-policy-bg", "#3fa3db", "#134a89")
+scrollBG[scrollBG.length] = animateBG(".color-change-bg", "#134a89", "#1ea185")
+scrollBG[scrollBG.length] = animateBG(".color-change-bg", "#1ea185", "#9bbb5c")
+scrollBG[scrollBG.length] = animateBG(".color-change-bg", "#9bbb5c", "#e3f226")
+scrollBG[scrollBG.length] = animateBG(".color-change-bg", "#e3f226", "#f29b26")
+scrollBG[scrollBG.length] = animateBG(".color-change-bg", "#f29b26", "#bd392f")
+scrollBG[scrollBG.length] = animateBG(".color-change-bg", "#bd392f", "#f15b6d")
+scrollBG[scrollBG.length] = animateBG(".color-change-bg", "#f15b6d", "#9b26f2")
+scrollBG[scrollBG.length] = animateBG(".color-change-bg", "#9b26f2", "#3fa3db")
+scrollBG[scrollBG.length] = animateBG(".color-change-bg", "#3fa3db", "#134a89")
 
 
-let startColor = document.getElementById("privacy-policy");
-let fullHeight = Math.floor(document.getElementById("privacy-policy").clientHeight/5);
+let startColor = document.getElementById("main");
+let fullHeight = Math.floor(document.getElementById("main").clientHeight/5);
 startColor.style.backgroundColor = "#004589";
 window.onscroll = () => {
     let x = Math.floor(scrollBG[scrollBG.length-1].currentTime/time)
     let y = Math.floor(scrollBG[scrollBG.length-1].currentTime)
 
     for (i = 0; i < scrollBG.length; i++){
-        scrollBG[i].seek((window.scrollY / (time * 11)) * scrollBG[i].duration);
+        scrollBG[i].seek((window.scrollY / (time * 8)) * scrollBG[i].duration);
     }
-    scrollBG[x].seek((window.scrollY / (time * 11)) * scrollBG[scrollBG.length-1].duration);
+    scrollBG[x].seek((window.scrollY / (time * 8)) * scrollBG[scrollBG.length-1].duration);
 
-    y < 20 ? startColor.style.backgroundColor = "#004589" : console.log(y)
+    y < 20 ? startColor.style.backgroundColor = "#004589" : null
 
 };
