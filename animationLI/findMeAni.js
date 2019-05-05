@@ -89,3 +89,12 @@
             return animation
         }
         animate()
+        anime({
+            targets: ".throbber-inner",
+            scale: .5,
+            border: "2px",
+            easing: "easeInCubic",
+            direction: "alternate",
+            loop: true,
+            duration: 1500,
+        })
