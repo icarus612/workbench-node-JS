@@ -97,13 +97,30 @@
                         easing: "easeInCirc"
                     },
                 ],
+                height: [
+                  {
+                      value: ["10px", "1px"],
+                      delay: 480,
+                      duration: 30
+                  },
+                  {
+                      value: ["1px", "10px"],
+                      duration: 30
+                  },
+                ],
+                backgroundColor: {
+                    value: ["#2D80C3", "#fff"],
+                    delay: 450,
+                    duration: 100
+                },
+                border: [0, "2px solid #2D80C3"],
                 borderRadius: {
                     value: ["50%", "0px"],
                     delay: 450,
                     duration: 100
                 },
                 rotateZ: {
-                    value: [0, 700],
+                    value: [0, 720],
                     delay: 500,
                     duration: 800,
                     easing: "easeInOutCirc"
