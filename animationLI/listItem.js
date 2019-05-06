@@ -22,16 +22,32 @@
                 }
             }).add({
                 targets: ".animated-dot",
-                translateY: [0, startY()],
+                translateY: [-5, startY()],
                 translateX: [startX(), startX()],
                 duration: 1000,
                 easing: "easeOutCubic",
+            }, 800).add({
+              targets: ".pulse2",
+              opacity: [1, 0],
+              scale: [
+                {value: [1, 2]},
+              ],
+              easing: "easeOutCubic",
+              duration: 1000,
             }).add({
                 targets: ".mv-1",
                 translateX: [startX(), (startX() + fullWidth() - endX(0))],
                 translateY: [startY(), endY(0)],
                 duration: 600,
                 easing: "easeOutCubic"
+            }).add({
+              targets: ".pulse3",
+              opacity: [1, 0],
+              scale: [
+                {value: [1, 2]},
+              ],
+              easing: "easeOutCubic",
+              duration: 1000,
             }).add({
                 targets: ".mv-3",
                 translateY: [
@@ -42,6 +58,14 @@
                 translateX: { value: [startX(), (startX() + fullWidth() - endX(1))], easing: "linear",},
                 duration: 1300,
                 delay: 100
+            }).add({
+              targets: ".pulse4",
+              opacity: [1, 0],
+              scale: [
+                {value: [1, 2]},
+              ],
+              easing: "easeOutCubic",
+              duration: 1000,
             }).add({
                 targets: ".mv-2",
                 translateX: [
@@ -85,16 +109,24 @@
                     easing: "easeInOutCirc"
                 },
 
+            }).add({
+              targets: ".pulse5",
+              opacity: [1, 0],
+              scale: [
+                {value: [1, 2]},
+              ],
+              easing: "easeOutCubic",
+              duration: 1000,
             })
             return animation
         }
         animate()
         anime({
-            targets: ".throbber-inner",
-            scale: .5,
-            border: "2px",
-            easing: "easeInCubic",
-            direction: "alternate",
-            loop: true,
-            duration: 1500,
+          targets: ".pulse1",
+          scale: 1.6,
+          border: "0px",
+          easing: "easeInCubic",
+          direction: "alternate",
+          loop: true,
+          duration: 1500,
         })
