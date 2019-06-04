@@ -117,3 +117,28 @@
 					hideMe(carouselsMade[i], widthFunc());
 				}
 			}
+
+
+			let carouselLink = document.querySelectorAll(".carousel-link");
+			let platformLink = document.querySelectorAll(".platform-link");
+
+			let findMe = (e) => {
+				for (let i = 0; i < e.length; i++) {
+					e[i].onclick = () => {
+
+						for (let j = 0; j < platformCarousel.length; j++) {
+							let regCheck = new RegExp(`#${platformCarousel[j].id}`);
+							if (regCheck.test(e[i].id)){
+								let foundMe = document.querySelectorAll(".platform-img");
+								for (let u = 0; u < foundMe.length; u++){
+									foundMe[u].style.display = "none";
+								}
+								platformCarousel[j].style.display =  "block";
+							}
+						}
+						marginMe();
+					}
+				}
+			}
+			findMe(carouselLink);
+			findMe(platformLink);
