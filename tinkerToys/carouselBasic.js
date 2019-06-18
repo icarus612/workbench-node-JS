@@ -67,78 +67,76 @@
 			})
 
 
-			let widthFunc = () => {
-				return n == 0 ? (document.querySelector(".parent-element").offsetWidth > 992 ? 2 : 1) : n
+			var widthFunc = () => {
+				return document.querySelector("body").offsetWidth > 992 ? 2 : 1
 			}
 
 			let hideMe = (e, n) => {
 				for (let i = 0; i < e.length; i++){
-					i < n ? $(e[i]).show() : $(e[i]).hide()
+					e[i].style.display = "block";
+					e[i].style.order > n ? e[i].style.display = "none" : e[i].style.display = "block"
 				}
 			}
 
-			let makeCarousel = (wrapperClass, carouselClass, showNo) => {
-				let carousel = [];
-
-				$(`.${wrapperClass} > .${carouselClass}`)
-					.each(i => {
-						carousel.push($(`.${wrapperClass} > .${carouselClass}`)[i]); //add customers to stories array
-						i++;
-					});
-				hideMe(carousel, showNo)
+			var makeCarousel = (wrapper, card, showNo=0) => {
+				let carousel = document.querySelector(wrapper).querySelectorAll(card)
+				for (let i = 0; i < carousel.length; i++){
+					carousel[i].style.order = [i+1];
+					carousel[i].style.display = "block";
+				}
+				if (showNo) hideMe(carousel, showNo)
 				return carousel
 			}
 
-			let putIn = (e, n) => {
+
+			let findMe = (e, s, a=0) => {
 				for (let i = 0; i < e.length; i++) {
-					$(e[i]).css('order', i + 1)
+					e[i].onclick = () => {
+
+						for (let j = 0; j < s.length; j++) {
+							let regCheck = new RegExp(`#${s[j].id}`);
+							if (regCheck.test(e[i].id)){
+								let x = (s.length+1)/2 - s[j].style.order;
+								for (let u = 0; u < s.length; u++){
+									s[u].style.order = Number(slider[u].style.order) + x;
+									if (s[u].style.order > s.length) s[u].style.order = Number(s[u].style.order) -s.length;
+									if (s[u].style.order < 1) s[u].style.order = s.length + Number(s[u].style.order);
+								}
+							}
+						}
+						if (a) a()
+					}
 				}
-				hideMe(e, n)
 			}
 
-			let previousSlide = (e, n = 2) => {
-				e.unshift(e[e.length-1])
-				e.pop()
-				putIn(e, n)
+			var prev = (e, s=0, a=0) => {
+				for (let i = 0; i < e.length; i++){
+					e[i].style.order++;
+					if (e[i].style.order > e.length) e[i].style.order = 1;
+				}
+				if (s) hideMe(e, s);
+				if (a) a();
 			}
-
-			let nextSlide = (e, n = 2) => {
-				e.push(e[0])
-				e.shift()
-				putIn(e, n)
+			var next = (e, s=0, a=0) => {
+				for (let i = 0; i < e.length; i++){
+					e[i].style.order--;
+					if (e[i].style.order == 0) e[i].style.order = e.length;
+				}
+				if (s) hideMe(e, s);
+				if (a) a();
 			}
 
 			let carousel1 = makeCarousel("carousel1", "story-box", widthFunc());
 			let carousel2 = makeCarousel("carousel2", "story-box", widthFunc());
 			let carousel3 = makeCarousel("carousel3", "story-box", widthFunc());
 			let carouselsMade = [carousel1, carousel2, carousel3];
+
 			window.onresize = () => {
 				for (i = 0; i < carouselsMade.length; i++){
 					hideMe(carouselsMade[i], widthFunc());
 				}
 			}
-
-
 			let carouselLink = document.querySelectorAll(".carousel-link");
 			let platformLink = document.querySelectorAll(".platform-link");
-
-			let findMe = (e) => {
-				for (let i = 0; i < e.length; i++) {
-					e[i].onclick = () => {
-
-						for (let j = 0; j < platformCarousel.length; j++) {
-							let regCheck = new RegExp(`#${platformCarousel[j].id}`);
-							if (regCheck.test(e[i].id)){
-								let foundMe = document.querySelectorAll(".platform-img");
-								for (let u = 0; u < foundMe.length; u++){
-									foundMe[u].style.display = "none";
-								}
-								platformCarousel[j].style.display =  "block";
-							}
-						}
-						marginMe();
-					}
-				}
-			}
 			findMe(carouselLink);
 			findMe(platformLink);
