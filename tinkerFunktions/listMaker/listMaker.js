@@ -1,4 +1,5 @@
 let fs = require('fs')
+let process = require('process')
 fs.readFile('./shopify-files-list.txt', 'utf8', function(err, data){
     if (err) throw err;
     processFile(data)
